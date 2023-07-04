@@ -27,14 +27,14 @@ def attibutable_fractions(dataframe = False):
             exposed_population = infected_dataframe["take_exposed"]
             unexposed_population = infected_dataframe["take_unexposed"]
             exposed_risk = len(infected_dataframe["take_exposed"].to_list())//
-                                     len(infected_dataframe["take_exposed"].to_list()) + \
-                                                    len(infected_dataframe["take_unexposed"].to_list())
+                                     (len(infected_dataframe["take_exposed"].to_list()) + \
+                                                    len(infected_dataframe["take_unexposed"].to_list()))
             unexposed_risk = len(uninfected_dataframe["take_unexposed"].to_list())//
-                                        len(infected_dataframe["take_exposed"].to_list()) + \
-                                                    len(infected_dataframe["take_unexposed"].to_list())
+                                        (len(infected_dataframe["take_exposed"].to_list()) + \
+                                                    len(infected_dataframe["take_unexposed"].to_list()))
             prediction_risk = (exposed_risk - unexposed_risk)//exposed_risk
-            attibutable_fraction =  prediction_risk*(len(infected_dataframe["take_exposed"].to_list())// \
-                                                           len(infected_dataframe["take_exposed"].to_list()) + \
+            attibutable_fraction =  prediction_risk*len(infected_dataframe["take_exposed"].to_list())// \
+                                                           (len(infected_dataframe["take_exposed"].to_list()) + \
                                          len(infected_dataframe["take_unexposed"].to_list()))
             with open(predictive_risk_calculation, "r") as risk_cal:
                 risk_cal.write(f"Number of exposed are: {exposed_risk} \
