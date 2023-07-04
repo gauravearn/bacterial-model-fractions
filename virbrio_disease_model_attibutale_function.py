@@ -42,5 +42,7 @@ def attibutable_fractions(dataframe = False):
                                 \nThe prediction risk is : {prediction_risk} \
                                 \nThe attibutable fractions is: {attibutable_fraction}")                            
             return prediction_risk, attributable_fraction
+snap.stop()
+snap.save()        
 if __name__ == __main__:
     arguably.run() 
