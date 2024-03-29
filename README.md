@@ -1,4 +1,5 @@
-# bacterial_disease_model_attributable_fractions
+# bacterial-model-fractions
+
 This repository contains the risk model function of the disease model in virbrio infections and how can be modeled to estimate the attributable rates.
 
 Gaurav Sablok \
